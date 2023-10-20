@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
     @Override
     public void onSendData(Country selectedCountry) {
         DetailsFragment fragment = (DetailsFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.main_fragment_view);
+                .findFragmentById(R.id.detailFragment);
         if (fragment != null)
             fragment.setSelectedCountry(selectedCountry);
     }
