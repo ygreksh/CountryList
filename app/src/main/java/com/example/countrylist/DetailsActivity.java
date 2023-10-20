@@ -1,10 +1,17 @@
 package com.example.countrylist;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -27,14 +34,18 @@ public class DetailsActivity extends AppCompatActivity {
             country = new Country(
                     getIntent().getStringExtra("country_name"),
                     getIntent().getStringExtra("country_capital"),
-                    getIntent().getIntExtra("country_flag", R.drawable.ar_flag)
+                    getIntent().getStringExtra("country_flag")
             );
         }
 
         if (country != null) {
             textViewName.setText(country.name);
             textViewCapital.setText(country.capital);
-            imageViewFlag.setImageResource(country.flagResource);
+//            imageViewFlag.setImageResource(country.flagResource);
+//            Glide.with(this)
+//                    .asBitmap()
+//                    .load(country.flagUrl)
+//                    .into(imageViewFlag);
         }
     }
 }

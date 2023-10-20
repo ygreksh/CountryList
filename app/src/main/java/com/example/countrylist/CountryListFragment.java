@@ -58,24 +58,12 @@ public class CountryListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        countries.add(new Country("Name 1", "Capital 1", R.drawable.ar_flag));
-        countries.add(new Country("Name 2", "Capital 2", R.drawable.ar_flag));
-        countries.add(new Country("Name 3", "Capital 3", R.drawable.ar_flag));
-        countries.add(new Country("Name 4", "Capital 4", R.drawable.ar_flag));
-        countries.add(new Country("Name 5", "Capital 5", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
-        countries.add(new Country("Name 6", "Capital 6", R.drawable.ar_flag));
+        countries.add(new Country("China", "Capital 1", "https://www.countryflags.com/wp-content/uploads/china-flag-png-large.png"));
+        countries.add(new Country("India", "Capital 2", "https://www.countryflags.com/wp-content/uploads/india-flag-png-large.png"));
+        countries.add(new Country("USA", "Capital 3", "https://www.countryflags.com/wp-content/uploads/united-states-of-america-flag-png-large.png"));
+        countries.add(new Country("Indonesia", "Capital 4", "https://www.countryflags.com/wp-content/uploads/indonesia-flag-png-large.png"));
+        countries.add(new Country("Brazil", "Capital 5", "https://www.countryflags.com/wp-content/uploads/brazil-flag-png-large.png"));
+
 //        if (getArguments() != null) {
 //            mParam1 = getArguments().getString(ARG_PARAM1);
 //            mParam2 = getArguments().getString(ARG_PARAM2);
