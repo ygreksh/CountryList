@@ -35,9 +35,6 @@ android {
         dataBinding = true
     }
 
-//    dataBinding {
-//        enabled = true
-//    }
 }
 
 dependencies {

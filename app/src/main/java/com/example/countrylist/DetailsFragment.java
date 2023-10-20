@@ -14,15 +14,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 public class DetailsFragment extends Fragment {
-
-//    // TODO: Rename parameter arguments, choose names that match
-//    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     public static final String ARG_PARAM_NAME = "country_name";
     public static final String ARG_PARAM_CAPITAL = "country_capital";
     public static final String ARG_PARAM_FLAG = "country_flag";
 
-//
-//    // TODO: Rename and change types of parameters
     private String mParamName;
     private String mParamCapital;
     private String mParamFlag;
@@ -47,18 +42,13 @@ public class DetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_detals, container, false);
 
-        TextView textViewName = view.findViewById(R.id.textview_name);
-        TextView textViewCapital = view.findViewById(R.id.textview_capital);
-        ImageView imageViewFlag = view.findViewById(R.id.imageview_flag);
+        country = new Country(
+                mParamName,
+                mParamCapital,
+                mParamFlag
+        );
 
-        textViewName.setText(mParamName);
-        textViewCapital.setText(mParamCapital);
-//        imageViewFlag.setImageResource(mParamFlag);
 
-        Glide.with(this)
-                .asBitmap()
-                .load(mParamFlag)
-                .into(imageViewFlag);
 
         // Inflate the layout for this fragment
         return view;
