@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,5 +62,17 @@ public class DetalsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_detals, container, false);
+    }
+
+    public void setSelectedCountry(Country selectedCountry) {
+        TextView textViewName = getView().findViewById(R.id.textview_name);
+        TextView textViewCapital = getView().findViewById(R.id.textview_capital);
+        ImageView imageViewFlag = getView().findViewById(R.id.imageview_flag);
+
+        if (selectedCountry != null) {
+            textViewName.setText(selectedCountry.name);
+            textViewCapital.setText(selectedCountry.capital);
+            imageViewFlag.setImageResource(selectedCountry.flagResource);
+        }
     }
 }

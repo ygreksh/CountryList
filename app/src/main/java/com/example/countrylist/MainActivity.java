@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainFragment.OnFragmentSendDataListener{
     ArrayList<Country> countries = new ArrayList<>();
 
     @Override
@@ -52,4 +52,11 @@ public class MainActivity extends AppCompatActivity {
 //        });
     }
 
+    @Override
+    public void onSendData(Country selectedCountry) {
+        DetalsFragment fragment = (DetalsFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.main_fragment_view);
+        if (fragment != null)
+            fragment.setSelectedCountry(selectedCountry);
+    }
 }
