@@ -6,6 +6,7 @@ android {
     namespace = "com.example.countrylist"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.example.countrylist"
         minSdk = 24
@@ -29,6 +30,14 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+//    dataBinding {
+//        enabled = true
+//    }
 }
 
 dependencies {
