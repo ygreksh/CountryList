@@ -13,6 +13,7 @@ import java.util.List;
 public class CountryRecyclerViewAdapter  extends RecyclerView.Adapter<CountryViewHolder> {
     private final LayoutInflater inflater;
     private final List<Country> countryList;
+    private OnCountryClickListener onCountryClickListener;
 
     public CountryRecyclerViewAdapter(Context context, List<Country> countryList) {
         this.inflater = LayoutInflater.from(context);
@@ -32,10 +33,29 @@ public class CountryRecyclerViewAdapter  extends RecyclerView.Adapter<CountryVie
         holder.imageViewFlag.setImageResource(country.flagResource);
         holder.textViewName.setText(country.name);
 //        holder.textViewCapital.setText(country.capital);
+
+        holder.itemView.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (onCountryClickListener != null) {
+                            onCountryClickListener.onClick(position, country);
+                        }
+                    }
+                }
+        );
     }
 
     @Override
     public int getItemCount() {
         return countryList.size();
+    }
+
+    public void setOnCountryClickListener(OnCountryClickListener onClickListener) {
+        this.onCountryClickListener = onClickListener;
+    }
+
+    public interface OnCountryClickListener {
+        void onClick(int position, Country model);
     }
 }

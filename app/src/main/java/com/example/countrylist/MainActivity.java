@@ -3,6 +3,7 @@ package com.example.countrylist;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -36,8 +37,19 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.country_list);
 
-        CountryRecyclerViewAdapter adapter = new CountryRecyclerViewAdapter(this, countries);
-        recyclerView.setAdapter(adapter);
+        CountryRecyclerViewAdapter countryListAdapter = new CountryRecyclerViewAdapter(this, countries);
+        recyclerView.setAdapter(countryListAdapter);
+
+        countryListAdapter.setOnCountryClickListener(new CountryRecyclerViewAdapter.OnCountryClickListener() {
+            @Override
+            public void onClick(int position, Country model) {
+                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                intent.putExtra("country_name", model.name);
+                intent.putExtra("country_capital", model.capital);
+                intent.putExtra("country_flag", model.flagResource);
+                startActivity(intent);
+            }
+        });
     }
 
 }
