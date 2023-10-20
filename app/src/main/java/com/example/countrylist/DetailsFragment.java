@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +15,16 @@ public class DetailsFragment extends Fragment {
 
 //    // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-//    private static final String ARG_PARAM1 = "param1";
-//    private static final String ARG_PARAM2 = "param2";
+    public static final String ARG_PARAM_NAME = "country_name";
+    public static final String ARG_PARAM_CAPITAL = "country_capital";
+    public static final String ARG_PARAM_FLAG = "country_flag";
+
 //
 //    // TODO: Rename and change types of parameters
-//    private String mParam1;
-//    private String mParam2;
-
+    private String mParamName;
+    private String mParamCapital;
+    private int mParamFlag;
+    private Country country;
     public DetailsFragment() {
         // Required empty public constructor
     }
@@ -46,25 +50,56 @@ public class DetailsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
+        if (getArguments() != null) {
+            mParamName = getArguments().getString(ARG_PARAM_NAME);
+            mParamCapital = getArguments().getString(ARG_PARAM_CAPITAL);
+            mParamFlag = getArguments().getInt(ARG_PARAM_FLAG);
+            Log.d("test", "Details onCreate country: " + mParamName + " " + mParamCapital);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_detals, container, false);
+//        country = new Country(mParamName, mParamCapital, mParamFlag);
+//        setSelectedCountry(country);
+
+        TextView textViewName = view.findViewById(R.id.textview_name);
+        TextView textViewCapital = view.findViewById(R.id.textview_capital);
+        ImageView imageViewFlag = view.findViewById(R.id.imageview_flag);
+
+        textViewName.setText(mParamName);
+        textViewCapital.setText(mParamCapital);
+        imageViewFlag.setImageResource(mParamFlag);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detals, container, false);
+        return view;
+
+//        country = new Country(mParamName, mParamCapital, mParamFlag);
+
+//        setSelectedCountry(
+//                mParamName,
+//                mParamCapital,
+//                mParamFlag
+//        );
     }
 
-    public void setSelectedCountry(Country selectedCountry) {
-        TextView textViewName = getView().findViewById(R.id.textview_name);
-        TextView textViewCapital = getView().findViewById(R.id.textview_capital);
-        ImageView imageViewFlag = getView().findViewById(R.id.imageview_flag);
+    public void setSelectedCountry(
+//            String name, String capital, int flagResource
+            Country selectedCountry
+    ) {
+//        TextView textViewName = getView().findViewById(R.id.textview_name);
+//        TextView textViewCapital = getView().findViewById(R.id.textview_capital);
+//        ImageView imageViewFlag = getView().findViewById(R.id.imageview_flag);
+        TextView textViewName = getActivity().findViewById(R.id.textview_name);
+        TextView textViewCapital = getActivity().findViewById(R.id.textview_capital);
+        ImageView imageViewFlag = getActivity().findViewById(R.id.imageview_flag);
 
         if (selectedCountry != null) {
+//            textViewName.setText(name);
+//            textViewCapital.setText(capital);
+//            imageViewFlag.setImageResource(flagResource);
             textViewName.setText(selectedCountry.name);
             textViewCapital.setText(selectedCountry.capital);
             imageViewFlag.setImageResource(selectedCountry.flagResource);

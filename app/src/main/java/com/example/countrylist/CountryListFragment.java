@@ -1,7 +1,6 @@
 package com.example.countrylist;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class MainFragment extends Fragment {
+public class CountryListFragment extends Fragment {
 
     ArrayList<Country> countries = new ArrayList<>();
 
@@ -27,7 +26,7 @@ public class MainFragment extends Fragment {
 //    private String mParam1;
 //    private String mParam2;
 
-    public MainFragment() {
+    public CountryListFragment() {
         // Required empty public constructor
     }
 
