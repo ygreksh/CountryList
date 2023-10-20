@@ -1,9 +1,7 @@
 package com.example.countrylist;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
 
     @Override
     public void onSendData(Country selectedCountry) {
-        DetalsFragment fragment = (DetalsFragment) getSupportFragmentManager()
+        DetailsFragment fragment = (DetailsFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.main_fragment_view);
         if (fragment != null)
             fragment.setSelectedCountry(selectedCountry);
