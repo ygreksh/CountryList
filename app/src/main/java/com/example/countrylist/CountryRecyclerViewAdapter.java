@@ -16,11 +16,13 @@ import com.example.countrylist.databinding.CountryItemBinding;
 
 import java.util.List;
 
-public class CountryRecyclerViewAdapter  extends RecyclerView.Adapter<CountryViewHolder> implements CustomClickListener {
+public class CountryRecyclerViewAdapter  extends RecyclerView.Adapter<CountryViewHolder>
+        implements CustomClickListener
+{
     private final LayoutInflater inflater;
 //    private Context context;
     private final List<Country> countryList;
-//    private OnCountryClickListener onCountryClickListener;
+    private OnCountryClickListener onCountryClickListener;
 
     public CountryRecyclerViewAdapter(Context context, List<Country> countryList) {
 //        this.context = context;
@@ -44,17 +46,6 @@ public class CountryRecyclerViewAdapter  extends RecyclerView.Adapter<CountryVie
         holder.bind(country);
 
         holder.countryItemBinding.setItemClickListener(this);
-//        holder.itemView.setOnClickListener(
-//                new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-////                        if (onCountryClickListener != null) {
-////                            onCountryClickListener.onClick(position, country);
-////                        }
-//                        Log.d("test", "onBindViewHolder onClick() country: " + country.name + " " + country.capital);
-//                    }
-//                }
-//        );
     }
 
     @Override
@@ -62,19 +53,19 @@ public class CountryRecyclerViewAdapter  extends RecyclerView.Adapter<CountryVie
         return countryList.size();
     }
 
-//    public void setOnCountryClickListener(OnCountryClickListener onClickListener) {
-//        this.onCountryClickListener = onClickListener;
-//    }
+    public void setOnCountryClickListener(OnCountryClickListener onClickListener) {
+        this.onCountryClickListener = onClickListener;
+    }
 
     @Override
     public void itemClicked(Country item) {
-//        Country selectedCountry = model;
-//        fragmentSendDataListener.onSendData(selectedCountry);
         Log.d("test", "itemClicked() country: " + item.name + " " + item.capital);
-
+        if (onCountryClickListener != null) {
+            onCountryClickListener.onClick(item);
+        }
     }
 
-//    public interface OnCountryClickListener {
-//        void onClick(int position, Country model);
-//    }
+    public interface OnCountryClickListener {
+        void onClick(Country model);
+    }
 }

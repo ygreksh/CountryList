@@ -56,15 +56,16 @@ public class CountryListFragment extends Fragment {
 
         CountryRecyclerViewAdapter countryListAdapter = new CountryRecyclerViewAdapter(getActivity(), countries);
 //        recyclerView.setAdapter(countryListAdapter);
-        binding.setMyAdapter(countryListAdapter);
 
-//        countryListAdapter.setOnCountryClickListener(new CountryRecyclerViewAdapter.OnCountryClickListener() {
-//            @Override
-//            public void onClick(int position, Country model) {
-//                Country selectedCountry = model;
-//                fragmentSendDataListener.onSendData(selectedCountry);
-//            }
-//        });
+        countryListAdapter.setOnCountryClickListener(new CountryRecyclerViewAdapter.OnCountryClickListener() {
+            @Override
+            public void onClick(Country model) {
+                Country selectedCountry = model;
+                fragmentSendDataListener.onSendData(selectedCountry);
+            }
+        });
+
+        binding.setMyAdapter(countryListAdapter);
 
         return view;
     }
