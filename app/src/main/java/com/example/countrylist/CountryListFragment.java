@@ -41,6 +41,9 @@ public class CountryListFragment extends Fragment {
 
 //        countries = dataBase.countriesDao().getAllCountries();
 
+        dataBase = AppDataBase.getInstance(getContext());
+        countries = dataBase.countriesDao().getAllCountries();
+
         if (countries != null && countries.size() > 0) {
             Log.d("test", "CountryListFrag lodad from DB " +  countries.size() + " countries");
         } else {
@@ -49,6 +52,14 @@ public class CountryListFragment extends Fragment {
             countries.add(new Country("US","USA", "Capital 3", "https://flagsapi.com/US/flat/64.png"));
             countries.add(new Country("ID","Indonesia", "Capital 4", "https://flagsapi.com/ID/flat/64.png"));
             countries.add(new Country("BR","Brazil", "Capital 5", "https://flagsapi.com/BR/flat/64.png"));
+
+            dataBase.countriesDao().insert(new Country("AD","Andorra", "Capital 1", "https://flagsapi.com/AD/flat/64.png"));
+            dataBase.countriesDao().insert(new Country("AR","Argentina", "Capital 1", "https://flagsapi.com/AR/flat/64.png"));
+            dataBase.countriesDao().insert(new Country("AZ","Azerbaijan", "Capital 1", "https://flagsapi.com/AZ/flat/64.png"));
+            dataBase.countriesDao().insert(new Country("BG","Bulgaria", "Capital 1", "https://flagsapi.com/BG/flat/64.png"));
+
+
+            Log.d("test", "CountryListFrag runtime generated " +  countries.size() + " countries");
         }
 
 //        countries.add(new Country("CN","China", "Capital 1", "https://flagsapi.com/CN/flat/64.png"));
