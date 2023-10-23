@@ -7,9 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.countrylist.databinding.CountryItemBinding;
 
 import java.util.List;
 
@@ -28,20 +30,17 @@ public class CountryRecyclerViewAdapter  extends RecyclerView.Adapter<CountryVie
     @NonNull
     @Override
     public CountryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.country_item, parent, false);
-        return new CountryViewHolder(view);
+//        View view = inflater.inflate(R.layout.country_item, parent, false);
+        CountryItemBinding binding = DataBindingUtil.inflate(inflater, R.layout.country_item, parent, false);
+//        View view = binding.getRoot();
+        return new CountryViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CountryViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Country country = countryList.get(position);
-//        holder.imageViewFlag.setImageResource(country.flagResource);
-        Glide.with(holder.itemView)
-                .asBitmap()
-                .load(country.flagUrl)
-                .into(holder.imageViewFlag);
-        holder.textViewName.setText(country.name);
-//        holder.textViewCapital.setText(country.capital);
+
+        holder.bind(country);
 
         holder.itemView.setOnClickListener(
                 new View.OnClickListener() {

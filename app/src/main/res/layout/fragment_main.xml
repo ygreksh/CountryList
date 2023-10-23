@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".CountryListFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/country_list_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Country list:"
-        android:textSize="24sp"
-        />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/frag_country_list"
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        />
-</LinearLayout>
+        android:orientation="vertical"
+        tools:context=".CountryListFragment">
+
+        <TextView
+            android:id="@+id/country_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{title}"
+            android:textSize="24sp"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/frag_country_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+    </LinearLayout>
+</layout>
