@@ -43,17 +43,18 @@ public class CountryRecyclerViewAdapter  extends RecyclerView.Adapter<CountryVie
 
         holder.bind(country);
 
-        holder.itemView.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-//                        if (onCountryClickListener != null) {
-//                            onCountryClickListener.onClick(position, country);
-//                        }
-                        Log.d("test", "onBindViewHolder onClick() country: " + country.name + " " + country.capital);
-                    }
-                }
-        );
+        holder.countryItemBinding.setItemClickListener(this);
+//        holder.itemView.setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+////                        if (onCountryClickListener != null) {
+////                            onCountryClickListener.onClick(position, country);
+////                        }
+//                        Log.d("test", "onBindViewHolder onClick() country: " + country.name + " " + country.capital);
+//                    }
+//                }
+//        );
     }
 
     @Override
