@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,7 +19,7 @@ import java.util.List;
 
 public class CountryListFragment extends Fragment {
 
-//    AppDataBase dataBase;
+    AppDataBase dataBase;
     List<Country> countries = new ArrayList<>();
 
 
@@ -38,25 +37,25 @@ public class CountryListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        dataBase = App.instance.getDataBase();
+//        dataBase = App.getINSTANCE().getDataBase();
 
 //        countries = dataBase.countriesDao().getAllCountries();
 
-//        if (countries != null && countries.size() > 0) {
-//            Log.d("test", "CountryListFrag lodad from DB " +  countries.size() + " countries");
-//        } else {
-//            countries.add(new Country("CH","China", "Capital 1", "https://flagsapi.com/CH/flat/64.png"));
-//            countries.add(new Country("IN","India", "Capital 2", "https://flagsapi.com/IN/flat/64.png"));
-//            countries.add(new Country("US","USA", "Capital 3", "https://flagsapi.com/US/flat/64.png"));
-//            countries.add(new Country("ID","Indonesia", "Capital 4", "https://flagsapi.com/ID/flat/64.png"));
-//            countries.add(new Country("BR","Brazil", "Capital 5", "https://flagsapi.com/BR/flat/64.png"));
-//        }
+        if (countries != null && countries.size() > 0) {
+            Log.d("test", "CountryListFrag lodad from DB " +  countries.size() + " countries");
+        } else {
+            countries.add(new Country("CN","China", "Capital 1", "https://flagsapi.com/CN/flat/64.png"));
+            countries.add(new Country("IN","India", "Capital 2", "https://flagsapi.com/IN/flat/64.png"));
+            countries.add(new Country("US","USA", "Capital 3", "https://flagsapi.com/US/flat/64.png"));
+            countries.add(new Country("ID","Indonesia", "Capital 4", "https://flagsapi.com/ID/flat/64.png"));
+            countries.add(new Country("BR","Brazil", "Capital 5", "https://flagsapi.com/BR/flat/64.png"));
+        }
 
-        countries.add(new Country("CN","China", "Capital 1", "https://flagsapi.com/CN/flat/64.png"));
-        countries.add(new Country("IN","India", "Capital 2", "https://flagsapi.com/IN/flat/64.png"));
-        countries.add(new Country("US","USA", "Capital 3", "https://flagsapi.com/US/flat/64.png"));
-        countries.add(new Country("ID","Indonesia", "Capital 4", "https://flagsapi.com/ID/flat/64.png"));
-        countries.add(new Country("BR","Brazil", "Capital 5", "https://flagsapi.com/BR/flat/64.png"));
+//        countries.add(new Country("CN","China", "Capital 1", "https://flagsapi.com/CN/flat/64.png"));
+//        countries.add(new Country("IN","India", "Capital 2", "https://flagsapi.com/IN/flat/64.png"));
+//        countries.add(new Country("US","USA", "Capital 3", "https://flagsapi.com/US/flat/64.png"));
+//        countries.add(new Country("ID","Indonesia", "Capital 4", "https://flagsapi.com/ID/flat/64.png"));
+//        countries.add(new Country("BR","Brazil", "Capital 5", "https://flagsapi.com/BR/flat/64.png"));
     }
 
     @Override

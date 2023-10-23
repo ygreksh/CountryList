@@ -5,7 +5,7 @@ import android.app.Application;
 import androidx.room.Room;
 
 public class App extends Application {
-    public static App instance;
+    public static App INSTANCE;
 
     private AppDataBase dataBase;
 
@@ -13,12 +13,12 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        instance = this;
-//        dataBase = Room.databaseBuilder(this, AppDataBase.class, "database").build();
+        INSTANCE = this;
+//        dataBase = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "database").build();
     }
 
-    public static App getInstance() {
-        return instance;
+    public static App getINSTANCE() {
+        return INSTANCE;
     }
 
     public AppDataBase getDataBase() {
