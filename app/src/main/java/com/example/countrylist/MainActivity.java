@@ -8,12 +8,14 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements CountryListFragment.OnFragmentSendDataListener{
-    ArrayList<Country> countries = new ArrayList<>();
+//    ArrayList<Country> countries = new ArrayList<>();
+//    AppDataBase dataBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        dataBase = App.getInstance().getDataBase();
 
         if (findViewById(R.id.fragment_container) != null) {
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements CountryListFragme
         DetailsFragment detailsFragment = new DetailsFragment();
 
         Bundle args = new Bundle();
+        args.putString(DetailsFragment.ARG_PARAM_CODE, selectedCountry.code);
         args.putString(DetailsFragment.ARG_PARAM_NAME, selectedCountry.name);
         args.putString(DetailsFragment.ARG_PARAM_CAPITAL, selectedCountry.capital);
         args.putString(DetailsFragment.ARG_PARAM_FLAG, selectedCountry.flagUrl);

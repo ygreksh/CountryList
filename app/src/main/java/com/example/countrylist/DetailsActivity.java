@@ -27,11 +27,14 @@ public class DetailsActivity extends AppCompatActivity {
 
         Country country = null;
         if (
-                getIntent().hasExtra("country_name")
+
+                getIntent().hasExtra("country_code")
+                && getIntent().hasExtra("country_name")
                 && getIntent().hasExtra("country_capital")
                 && getIntent().hasExtra("country_flag")
         ) {
             country = new Country(
+                    getIntent().getStringExtra("country_code"),
                     getIntent().getStringExtra("country_name"),
                     getIntent().getStringExtra("country_capital"),
                     getIntent().getStringExtra("country_flag")

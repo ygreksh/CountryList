@@ -14,7 +14,7 @@ public class App extends Application {
         super.onCreate();
 
         instance = this;
-        dataBase = Room.databaseBuilder(this, AppDataBase.class, "database").build();
+//        dataBase = Room.databaseBuilder(this, AppDataBase.class, "database").build();
     }
 
     public static App getInstance() {

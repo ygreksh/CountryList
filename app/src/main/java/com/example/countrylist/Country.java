@@ -1,5 +1,6 @@
 package com.example.countrylist;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,6 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "countries")
 public class Country {
     @PrimaryKey
+    @NonNull
     public String code;
     public String name;
     public String capital;
@@ -19,9 +21,9 @@ public class Country {
         this.capital = capital;
         this.flagUrl = flagUrl;
     }
-    public Country(String name, String capital, String flagUrl) {
-        this.name = name;
-        this.capital = capital;
-        this.flagUrl = flagUrl;
-    }
+//    public Country(String name, String capital, String flagUrl) {
+//        this.name = name;
+//        this.capital = capital;
+//        this.flagUrl = flagUrl;
+//    }
 }

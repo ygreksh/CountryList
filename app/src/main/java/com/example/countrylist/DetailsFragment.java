@@ -16,10 +16,12 @@ import com.bumptech.glide.Glide;
 import com.example.countrylist.databinding.FragmentDetalsBinding;
 
 public class DetailsFragment extends Fragment {
+    public static final String ARG_PARAM_CODE = "country_code";
     public static final String ARG_PARAM_NAME = "country_name";
     public static final String ARG_PARAM_CAPITAL = "country_capital";
     public static final String ARG_PARAM_FLAG = "country_flag";
 
+    private String mParamCode;
     private String mParamName;
     private String mParamCapital;
     private String mParamFlag;
@@ -32,6 +34,7 @@ public class DetailsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+            mParamCode = getArguments().getString(ARG_PARAM_CODE);
             mParamName = getArguments().getString(ARG_PARAM_NAME);
             mParamCapital = getArguments().getString(ARG_PARAM_CAPITAL);
             mParamFlag = getArguments().getString(ARG_PARAM_FLAG);
@@ -45,6 +48,7 @@ public class DetailsFragment extends Fragment {
 //        View view = inflater.inflate(R.layout.fragment_detals, container, false);
 
         country = new Country(
+                mParamCode,
                 mParamName,
                 mParamCapital,
                 mParamFlag
