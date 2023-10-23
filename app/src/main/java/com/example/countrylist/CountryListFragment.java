@@ -52,18 +52,19 @@ public class CountryListFragment extends Fragment {
         View view = binding.getRoot();
         binding.setTitle("My Country List:");
 
-        RecyclerView recyclerView = view.findViewById(R.id.frag_country_list);
+//        RecyclerView recyclerView = view.findViewById(R.id.frag_country_list);
 
         CountryRecyclerViewAdapter countryListAdapter = new CountryRecyclerViewAdapter(getActivity(), countries);
-        recyclerView.setAdapter(countryListAdapter);
+//        recyclerView.setAdapter(countryListAdapter);
+        binding.setMyAdapter(countryListAdapter);
 
-        countryListAdapter.setOnCountryClickListener(new CountryRecyclerViewAdapter.OnCountryClickListener() {
-            @Override
-            public void onClick(int position, Country model) {
-                Country selectedCountry = model;
-                fragmentSendDataListener.onSendData(selectedCountry);
-            }
-        });
+//        countryListAdapter.setOnCountryClickListener(new CountryRecyclerViewAdapter.OnCountryClickListener() {
+//            @Override
+//            public void onClick(int position, Country model) {
+//                Country selectedCountry = model;
+//                fragmentSendDataListener.onSendData(selectedCountry);
+//            }
+//        });
 
         return view;
     }

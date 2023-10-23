@@ -7,6 +7,9 @@
         <variable
             name="title"
             type="String" />
+        <variable
+            name="myAdapter"
+            type="com.example.countrylist.CountryRecyclerViewAdapter" />
     </data>
 
     <LinearLayout
@@ -26,6 +29,7 @@
             android:id="@+id/frag_country_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:adapter="@{myAdapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
     </LinearLayout>

@@ -6,12 +6,16 @@
         <variable
             name="country"
             type="com.example.countrylist.Country" />
+        <variable
+            name="itemClickListener"
+            type="com.example.countrylist.CustomClickListener" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:orientation="horizontal"
         android:padding="5dp"
+        android:onClick="@{() -> itemClickListener.itemClicked(country)}"
         >
 
         <ImageView
