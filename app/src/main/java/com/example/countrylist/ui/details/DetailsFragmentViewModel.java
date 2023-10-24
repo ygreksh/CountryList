@@ -1,4 +1,4 @@
-package com.example.countrylist.ui;
+package com.example.countrylist.ui.details;
 
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;

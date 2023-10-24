@@ -9,14 +9,14 @@
             type="String" />
         <variable
             name="myAdapter"
-            type="com.example.countrylist.ui.CountryRecyclerViewAdapter" />
+            type="com.example.countrylist.ui.main.CountryRecyclerViewAdapter" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.CountryListFragment">
+        tools:context=".ui.main.CountryListFragment">
 
         <TextView
             android:id="@+id/country_list_title"

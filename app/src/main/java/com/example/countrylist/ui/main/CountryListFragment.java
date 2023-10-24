@@ -1,4 +1,4 @@
-package com.example.countrylist.ui;
+package com.example.countrylist.ui.main;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -30,7 +30,7 @@ public class CountryListFragment extends Fragment {
         // Required empty public constructor
     }
 
-    interface OnFragmentSendDataListener {
+    public interface OnFragmentSendDataListener {
         void onSendData(Country data);
     }
 

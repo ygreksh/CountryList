@@ -8,7 +8,7 @@
             type="com.example.countrylist.model.Country" />
         <variable
             name="itemClickListener"
-            type="com.example.countrylist.ui.CustomClickListener" />
+            type="com.example.countrylist.ui.main.CustomClickListener" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"

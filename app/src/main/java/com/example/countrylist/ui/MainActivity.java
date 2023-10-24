@@ -7,8 +7,8 @@ import android.os.Bundle;
 
 import com.example.countrylist.R;
 import com.example.countrylist.model.Country;
-import com.example.countrylist.ui.CountryListFragment;
-import com.example.countrylist.ui.DetailsFragment;
+import com.example.countrylist.ui.details.DetailsFragment;
+import com.example.countrylist.ui.main.CountryListFragment;
 
 public class MainActivity extends AppCompatActivity implements CountryListFragment.OnFragmentSendDataListener{
 //    ArrayList<Country> countries = new ArrayList<>();

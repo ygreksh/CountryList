@@ -1,4 +1,4 @@
-package com.example.countrylist.ui;
+package com.example.countrylist.ui.main;
 
 import com.example.countrylist.model.Country;
 

@@ -1,4 +1,4 @@
-package com.example.countrylist.ui;
+package com.example.countrylist.ui.main;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
