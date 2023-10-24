@@ -14,7 +14,6 @@ public abstract class AppDataBase
 {
     private static final String DB_NAME = "database";
     private static AppDataBase instance;
-//    public abstract AppDataBase appDataBase();
     public abstract CountriesDao countriesDao();
 
     public static AppDataBase getInstance(Context context) {

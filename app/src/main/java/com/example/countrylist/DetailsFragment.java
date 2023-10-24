@@ -2,8 +2,11 @@ package com.example.countrylist;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,6 +29,8 @@ public class DetailsFragment extends Fragment {
     private String mParamCapital;
     private String mParamFlag;
     private Country country;
+
+    private DetailsFragmentViewModel viewModel;
     public DetailsFragment() {
         // Required empty public constructor
     }
@@ -63,5 +68,11 @@ public class DetailsFragment extends Fragment {
         // Inflate the layout for this fragment
         return view;
 
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+//        viewModel = ViewModelProvider.of(requireActivity()).
     }
 }
