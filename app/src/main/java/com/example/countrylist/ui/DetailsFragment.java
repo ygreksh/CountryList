@@ -1,4 +1,4 @@
-package com.example.countrylist;
+package com.example.countrylist.ui;
 
 import android.os.Bundle;
 
@@ -12,11 +12,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.countrylist.databinding.FragmentDetalsBinding;
+import com.example.countrylist.model.Country;
+import com.example.countrylist.R;
 
 public class DetailsFragment extends Fragment {
     public static final String ARG_PARAM_CODE = "country_code";
@@ -73,6 +72,9 @@ public class DetailsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        viewModel = ViewModelProvider.of(requireActivity()).
+//        viewModel = new ViewModelProvider(
+//                requireActivity(),
+//                ViewModelProvider.Factory.from(DetailsFragmentViewModel.initializer)
+//        ).get(DetailsFragmentViewModel.class);
     }
 }

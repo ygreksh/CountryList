@@ -1,4 +1,4 @@
-package com.example.countrylist;
+package com.example.countrylist.ui;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,7 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.countrylist.data.AppDataBase;
 import com.example.countrylist.databinding.FragmentMainBinding;
+import com.example.countrylist.model.Country;
+import com.example.countrylist.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +40,6 @@ public class CountryListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        dataBase = App.getINSTANCE().getDataBase();
-
-//        countries = dataBase.countriesDao().getAllCountries();
-
         dataBase = AppDataBase.getInstance(getContext());
         countries = dataBase.countriesDao().getAllCountries();
 
@@ -61,12 +60,6 @@ public class CountryListFragment extends Fragment {
 
             Log.d("test", "CountryListFrag runtime generated " +  countries.size() + " countries");
         }
-
-//        countries.add(new Country("CN","China", "Capital 1", "https://flagsapi.com/CN/flat/64.png"));
-//        countries.add(new Country("IN","India", "Capital 2", "https://flagsapi.com/IN/flat/64.png"));
-//        countries.add(new Country("US","USA", "Capital 3", "https://flagsapi.com/US/flat/64.png"));
-//        countries.add(new Country("ID","Indonesia", "Capital 4", "https://flagsapi.com/ID/flat/64.png"));
-//        countries.add(new Country("BR","Brazil", "Capital 5", "https://flagsapi.com/BR/flat/64.png"));
     }
 
     @Override

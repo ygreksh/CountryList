@@ -5,10 +5,10 @@
     <data>
         <variable
             name="country"
-            type="com.example.countrylist.Country" />
+            type="com.example.countrylist.model.Country" />
         <variable
             name="itemClickListener"
-            type="com.example.countrylist.CustomClickListener" />
+            type="com.example.countrylist.ui.CustomClickListener" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"

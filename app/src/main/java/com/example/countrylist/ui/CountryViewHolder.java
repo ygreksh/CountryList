@@ -1,8 +1,9 @@
-package com.example.countrylist;
+package com.example.countrylist.ui;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.countrylist.model.Country;
 import com.example.countrylist.databinding.CountryItemBinding;
 
 public class CountryViewHolder extends RecyclerView.ViewHolder {

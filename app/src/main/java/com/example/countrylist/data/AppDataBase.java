@@ -1,4 +1,4 @@
-package com.example.countrylist;
+package com.example.countrylist.data;
 
 import android.content.Context;
 
@@ -7,6 +7,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import com.example.countrylist.model.Country;
 
 @Database(entities = {Country.class}, version = 1)
 public abstract class AppDataBase

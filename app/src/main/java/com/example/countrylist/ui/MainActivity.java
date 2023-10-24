@@ -1,11 +1,14 @@
-package com.example.countrylist;
+package com.example.countrylist.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import java.util.ArrayList;
+import com.example.countrylist.R;
+import com.example.countrylist.model.Country;
+import com.example.countrylist.ui.CountryListFragment;
+import com.example.countrylist.ui.DetailsFragment;
 
 public class MainActivity extends AppCompatActivity implements CountryListFragment.OnFragmentSendDataListener{
 //    ArrayList<Country> countries = new ArrayList<>();

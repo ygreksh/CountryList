@@ -1,24 +1,22 @@
-package com.example.countrylist;
+package com.example.countrylist.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.countrylist.databinding.CountryItemBinding;
+import com.example.countrylist.model.Country;
+import com.example.countrylist.R;
 
 import java.util.List;
 
-public class CountryRecyclerViewAdapter  extends RecyclerView.Adapter<CountryViewHolder>
-        implements CustomClickListener
-{
+public class CountryRecyclerViewAdapter extends RecyclerView.Adapter<CountryViewHolder> implements CustomClickListener {
     private final LayoutInflater inflater;
 //    private Context context;
     private final List<Country> countryList;
