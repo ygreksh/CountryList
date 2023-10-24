@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,7 +49,8 @@ public class DetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.fragment_detals, container, false);
+
+        viewModel = new ViewModelProvider(requireActivity()).get(DetailsFragmentViewModel.class);
 
         country = new Country(
                 mParamCode,
@@ -75,5 +77,7 @@ public class DetailsFragment extends Fragment {
 //                requireActivity(),
 //                ViewModelProvider.Factory.from(DetailsFragmentViewModel.initializer)
 //        ).get(DetailsFragmentViewModel.class);
+
+//        viewModel = ViewModelProvider(this, ViewModelProviderFactory(this).get());
     }
 }

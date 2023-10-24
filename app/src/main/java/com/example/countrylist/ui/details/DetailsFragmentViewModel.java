@@ -7,12 +7,15 @@ import static androidx.lifecycle.SavedStateHandleSupport.createSavedStateHandle;
 import static androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY;
 
 import com.example.countrylist.App;
+import com.example.countrylist.data.CountryRepository;
 
 public class DetailsFragmentViewModel extends ViewModel {
+//    private CountryRepository repository;
     public DetailsFragmentViewModel(
-//            CountryRepository repository,
-            SavedStateHandle savedStateHandle
+//            CountryRepository repository
+//            SavedStateHandle savedStateHandle
     ) {
+//        this.repository = repository;
     }
 
 //    static final ViewModelInitializer<DetailsFragmentViewModel> initializer = new ViewModelInitializer<>(
