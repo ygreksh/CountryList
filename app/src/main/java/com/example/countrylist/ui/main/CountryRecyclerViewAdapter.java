@@ -48,7 +48,7 @@ public class CountryRecyclerViewAdapter extends RecyclerView.Adapter<CountryView
 
     @Override
     public int getItemCount() {
-        return countryList.size();
+        return countryList != null ? countryList.size() : 0;
     }
 
     public void setOnCountryClickListener(OnCountryClickListener onClickListener) {
