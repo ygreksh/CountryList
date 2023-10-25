@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import com.example.countrylist.databinding.FragmentMainBinding;
 import com.example.countrylist.domain.model.Country;
 import com.example.countrylist.R;
+import com.example.countrylist.domain.usecase.ShowDetailCountryInfoUseCase;
 
 import java.util.List;
 
@@ -29,6 +30,8 @@ public class CountryListFragment extends Fragment {
     public CountryListFragmentViewModel viewModel;
     public CountryRecyclerViewAdapter countryListAdapter;
     public FragmentMainBinding binding;
+
+    private ShowDetailCountryInfoUseCase showDetailCountryInfoUseCase = new ShowDetailCountryInfoUseCase();
 
     public CountryListFragment() {
         // Required empty public constructor
@@ -111,7 +114,8 @@ public class CountryListFragment extends Fragment {
                         @Override
                         public void onClick(Country model) {
                             Country selectedCountry = model;
-                            fragmentSendDataListener.onSendData(selectedCountry);
+//                            fragmentSendDataListener.onSendData(selectedCountry);
+                            showDetailCountryInfoUseCase.execute(fragmentSendDataListener, selectedCountry);
                         }
                     });
 

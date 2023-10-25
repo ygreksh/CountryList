@@ -41,7 +41,10 @@ public class MainActivity extends AppCompatActivity implements CountryListFragme
 
     @Override
     public void onSendData(Country selectedCountry) {
+        loadDetailsFragment(selectedCountry);
+    }
 
+    public void loadDetailsFragment(Country selectedCountry) {
         DetailsFragment detailsFragment = new DetailsFragment();
 
         Bundle args = new Bundle();
@@ -50,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements CountryListFragme
         args.putString(DetailsFragment.ARG_PARAM_CAPITAL, selectedCountry.capital);
         args.putString(DetailsFragment.ARG_PARAM_FLAG, selectedCountry.flagUrl);
         detailsFragment.setArguments(args);
-//        detailsFragment.setSelectedCountry(selectedCountry);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, detailsFragment);
