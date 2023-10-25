@@ -8,6 +8,7 @@ import androidx.room.RoomDatabase;
 import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.countrylist.data.dao.CountriesDao;
 import com.example.countrylist.domain.model.Country;
 
 @Database(entities = {Country.class}, version = 1)

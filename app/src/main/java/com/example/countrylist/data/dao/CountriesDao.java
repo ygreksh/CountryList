@@ -1,4 +1,4 @@
-package com.example.countrylist.data;
+package com.example.countrylist.data.dao;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
