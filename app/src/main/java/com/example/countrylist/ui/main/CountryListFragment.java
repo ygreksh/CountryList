@@ -15,12 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.countrylist.data.AppDataBase;
 import com.example.countrylist.databinding.FragmentMainBinding;
-import com.example.countrylist.model.Country;
+import com.example.countrylist.domain.model.Country;
 import com.example.countrylist.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CountryListFragment extends Fragment {

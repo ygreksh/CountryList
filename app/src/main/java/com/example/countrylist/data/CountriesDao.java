@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.countrylist.model.Country;
+import com.example.countrylist.domain.model.Country;
 
 import java.util.List;
 

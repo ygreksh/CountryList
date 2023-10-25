@@ -3,7 +3,7 @@ package com.example.countrylist.ui.details;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.countrylist.model.Country;
+import com.example.countrylist.domain.model.Country;
 
 public class DetailsFragmentViewModel extends ViewModel {
 //    private CountryRepository repository;

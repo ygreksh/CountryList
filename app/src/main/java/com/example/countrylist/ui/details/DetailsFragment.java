@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.countrylist.databinding.FragmentDetalsBinding;
-import com.example.countrylist.model.Country;
+import com.example.countrylist.domain.model.Country;
 import com.example.countrylist.R;
 
 public class DetailsFragment extends Fragment {

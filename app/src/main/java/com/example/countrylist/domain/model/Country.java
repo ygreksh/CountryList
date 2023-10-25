@@ -1,4 +1,4 @@
-package com.example.countrylist.model;
+package com.example.countrylist.domain.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

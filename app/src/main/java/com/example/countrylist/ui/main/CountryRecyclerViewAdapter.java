@@ -11,7 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.countrylist.databinding.CountryItemBinding;
-import com.example.countrylist.model.Country;
+import com.example.countrylist.domain.model.Country;
 import com.example.countrylist.R;
 
 import java.util.List;

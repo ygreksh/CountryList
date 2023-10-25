@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import com.example.countrylist.R;
-import com.example.countrylist.model.Country;
+import com.example.countrylist.domain.model.Country;
 import com.example.countrylist.ui.details.DetailsFragment;
 import com.example.countrylist.ui.main.CountryListFragment;
 
